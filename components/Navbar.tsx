@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { useIntl } from "react-intl";
 import { useLocalStorage } from "react-use";
 
 import { MainMenu } from "@/components/MainMenu";
@@ -18,11 +19,13 @@ import { useCheckoutByTokenQuery } from "@/saleor/api";
 
 import { RegionDialog } from "./RegionDialog";
 import { useRegions } from "./RegionsProvider";
+import { messages } from "./translations";
 
 export const Navbar = () => {
   const paths = usePaths();
   const [isRegionDialogOpen, setRegionDialogOpen] = useState(false);
   const { currentChannel } = useRegions();
+  const t = useIntl();
 
   const [checkoutToken, setCheckoutToken] = useLocalStorage(CHECKOUT_TOKEN);
   const { logout } = useAuth();
@@ -97,7 +100,7 @@ export const Navbar = () => {
                       aria-hidden="true"
                     />
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                      Log in
+                      {t.formatMessage(messages.logIn)}
                     </span>
                   </a>
                 </Link>

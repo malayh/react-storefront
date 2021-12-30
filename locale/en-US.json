@@ -1,0 +1,8 @@
+{
+  "app.home.greeting": "More →",
+  "app.navigation.login": "Log in",
+  "app.product.addToCart": "Add to cart",
+  "app.product.attributes": "Attributes",
+  "app.product.soldOut": "Sold out!",
+  "app.product.variantNotChosen": "Please chose the variant"
+}
